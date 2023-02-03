@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Vacancy;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('listings', [
+        'header' => 'Вакансии',
+        'listings' => Vacancy::all(),
+    ]);
 });
