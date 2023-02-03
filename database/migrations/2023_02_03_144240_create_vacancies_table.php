@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->longText('description');
-            $table->integer('salaryFrom');
-            $table->integer('salaryTo');
+            $table->integer('salaryFrom')->nullable();
+            $table->integer('salaryTo')->nullable();
             $table->timestamps();
         });
     }
